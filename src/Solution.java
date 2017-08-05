@@ -1,31 +1,38 @@
-import java.io.*;
 import java.util.*;
 
 public class Solution {
 // Write your code here.
 
+    LinkedList queue;
+    Stack<Character> stack;
+
+    // making a queue instance
+    public Solution(){
+        queue = new LinkedList();
+        stack = new Stack<>();
+    }
+
     // method that pushes a character onto a stack.
     private void enqueueCharacter(char c) {
-
+        queue.addLast(c);
     }
 
     // method that enqueues a character in the queue instance
     private void pushCharacter(char c) {
-
+        stack.push(c);
     }
 
     // method that pops and returns the character at the top of
     // the stack instance variable.
     private char popCharacter() {
-        return 0;
+        return stack.pop();
     }
 
     // method that dequeues and returns the first character in
     // the queue instance variable.
     private char dequeueCharacter() {
-        return 0;
+        return (char) queue.remove(0);
     }
-
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -57,5 +64,4 @@ public class Solution {
         System.out.println( "The word, " + input + ", is "
                 + ( (!isPalindrome) ? "not a palindrome." : "a palindrome." ) );
     }
-
 }
